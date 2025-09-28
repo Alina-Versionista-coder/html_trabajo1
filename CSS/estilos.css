@@ -1,0 +1,462 @@
+/* =====================================================
+   CSS 
+   Paleta: color principal + color secundario + blanco/negro
+   ===================================================== */
+:root{
+  /* COLORES BASE DE LA WEB */
+  --color-primario: #000000;    /* Negro: títulos, botones, fondos oscuros */
+  --color-secundario: #c59761;  /* Crema/marrón: acentos y detalles */
+  --gris-500: #535252;          /* Gris oscuro: fondo body y header*/
+  --color-crema: #f1e9d9;       /* Crema claro: fondos suaves */
+
+  /* COLORES GRISES */
+  --gris-100: #f6f8fc;          /* Gris muy claro (fondo o textos suaves) */
+  --gris-300: #e6eaf2;          /* Gris medio (bordes, líneas) */
+
+  /* COLORES BASICOS */
+  --negro: #000000;
+  --blanco: #ffffff;
+
+  /* LAYOT  */
+  --max-width: 1100px;          /* Ancho máximo del contenido centrado */
+  --radius: 10px;               /* Radio por defecto para bordes redondeados */
+}
+
+/* ===================== RESET BÁSICO ===================== */
+/* Hace que padding y borde no rompan el ancho total de los elementos */
+*{ box-sizing: border-box; }
+/* Desplazamiento suave al hacer clic en enlaces internos (#ancla) */
+html{ scroll-behavior: smooth; }
+
+/* ===================== BASE DEL DOCUMENTO ===================== */
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--negro);
+  line-height: 1.6;
+  background: var(--gris-500); /* Fondo general gris oscuro */
+}
+
+/* Imágenes responsivas y sin espacios raros */
+img{ max-width: 100%; height: auto; display: block; }
+
+/* Contenedor principal para centrar contenido */
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* ===================== CABECERA (HEADER) ===================== */
+header{
+  background: var(--gris-500);                     /* Pertenece al body */
+  border-bottom: 1px solid var(--gris-300);
+  padding: 0.3rem 1rem;
+  max-height: 78px;
+}
+
+/* Marca de la web que contiene: logo + nombre */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.brand img{
+  width: 40px; height: 40px; object-fit: cover;
+  border-radius: 50%; 
+  border: 2px solid var(--color-primario);
+}
+
+/* ===================== NAVEGACIÓN (NAV) ===================== */
+nav{ background: var(--color-primario); }
+
+/* Lista de enlaces del menú superior */
+nav .menu{
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: .5rem;
+  list-style: none; 
+  margin: 0; 
+  padding: .5rem 0;
+}
+
+/* Estilo de los enlaces del menú */
+nav .menu a{
+  display: inline-block;
+  padding: .5rem .9rem;
+  text-decoration: none;
+  color: var(--blanco);
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background .3s;
+}
+
+/* Efecto al pasar el ratón por los enlaces */
+nav .menu a:hover{ background: rgba(255,255,255,.2); }
+
+/* Pagina actual activa y esta destacada */
+nav .menu a.activo{ background: var(--color-secundario); }
+
+/* ===================== SECCIONES GENERALES ===================== */
+/* Bloques principales de contenido */
+section{
+  background: var(--blanco);
+  border: 1px solid var(--gris-300);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  margin: 1rem 0 3rem;
+}
+
+/* ============================ INDEX ================================
+============================PORTADA (HERO)============================*/
+/* Bloque de bienvenida con fondo color crema */
+.hero{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+  font-size: medium;
+  background: var(--color-crema);
+}
+
+/* Botón LLAMADA DE ACCION */
+.button{
+  display: inline-block;
+  padding: .7rem 1rem;
+  background: var(--color-primario);
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+}
+/* Boton: Cambio de color al pasar el ratón */
+.button:hover {
+  background: var(--color-secundario);
+}
+
+/* ===================== CARDS ===================== */
+/* 
+   
+   Cards(tarjetas) es una caja para contenedo, que se usa en todas las páginas de la web (inicio, servicios, contacto, presupuesto, etc.).
+   Card(tarjeta) que contiene : imagen(logo del sello), título(nombre), parrafo (descripcion) y un enlace, se usaran en ipagina principal index y seran 5
+  */
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 2rem;
+  border-radius: 12px;
+  background: var(--color-crema);
+}
+.card{
+  border: 1px solid var(--gris-300);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 12px #333;
+  padding: 1rem;
+  background: rgb(107, 107, 107); /* Fondo gris diferente para contraste */
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+.card h3{ margin: 0.5rem 0; font-size: 1.1rem; }
+.card p{ font-size: 0.9rem; text-align: left; font-weight: 300; }
+.card-link{
+  display: inline-block;
+  color: #222;
+  font-weight: 600;
+  transition: color .3s, transform .3s;
+  text-decoration: none;
+}
+.card-link:hover{
+  color: var(--color-secundario);
+  transform: scale(1.03);
+}
+.item{
+    text-decoration: none;
+}
+
+/* ===================== QUIÉNES SOMOS ===================== */
+.quienes {
+  max-width: 800px;              /* Maximo ancho en las pantallas gandes */
+  margin: 0 auto;                /* Centra el bloque */
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+}
+.quienes-img {
+  width: 80%;                    /* Imagen amplia pero no a 100% */
+  max-width: 500px;              /* Maximum de ancho en pantallas grandes */
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border: 1px solid var(--gris-300);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); /*sombras en los bordes*/
+}
+
+
+
+/* ============================================== PORTFOLIO ================================================== */
+
+/* ===================== GALERÍA ===================== */
+/* Cuadrícula de imágenes con títulos */
+
+/* Activa GRID en este contenedor, sus hijos directos seran items de grid*/
+/*grid-template-columns: cree colimnas responsivas, cada columna siempre sera un minimo de 220 px;  
+pero podra crecer hasta 1fr para ocupar todo el ancho disponible;
+/*repeat(auto-fill: rellena la fila con mayor numero de columnas,siempre respetando su minimo ancho de 220px;*/
+.galeria{
+  display: grid;                                                 
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;                                                 /* Espascio entre tarjetas */
+  margin-top: 1.5rem; }                                       /* Separacion superior respecto al bloque anterior */
+/* Tarjeta de la galería (imagen + caption(texto)) */
+.galeria .item{
+  border: 1px solid var(--gris-300);  /*Borde de gris muy ligero*/
+  border-radius: 8px;
+  overflow: hidden;                   /*Esconde los imperfeciones*/
+  background: #fff;           
+  text-align: center;                /*Centra texto en el medio de cada item */
+  box-shadow: 0 6px 12px #333;     /*Sombra que tendra cada caja*/
+}
+.galeria img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover; /* Se ajusta imagen sin deformar */
+  display: block;
+}
+.parrafo_galeria{
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.galeria p{ margin: 0; padding: .5rem; font-weight: 600; }
+/* Subtítulo bajo la imagen */
+.galeria .caption{
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+/* Cambio de color al hacer hover en el item */
+.galeria .item:hover .caption{ 
+  color: var(--color-secundario); 
+  transition: color .3s; 
+}
+
+/* Secciones de la galería con el mismo fondo crema en la pagina Portfolio*/
+#sbert-records,
+#bully-beatz,
+#ufo-recordings,
+#psykometrik-recordings,
+#hidden-secret{
+background: var(--color-crema);
+}
+
+/* =========================================== PRESUPUESTO ========================================== */
+/*================== FORMULARIO ====================*/
+/* Apariencia general del bloque de formulario */
+.container > section{
+  background: var(--color-crema);
+  border: 1px solid black;
+}
+
+/* Contenedor centrado para el formulario */
+.presupuesto-container section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Título centrado dentro de la sección */
+.container > section h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Ancho máximo del <form> para que sea cómodo de leer */
+.presupuesto-container form{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid vertical para los campos del formulario */
+form{ display: grid; gap: .9rem; max-width: 680px; }
+label{ font-weight: 600; }
+
+/* Campos base: input y textarea con borde y radio suaves */
+input, textarea{
+  width: 100%; 
+  padding: .7rem .8rem;
+  border: 1px solid var(--gris-300); 
+  border-radius: 8px; 
+  font: inherit;
+  background: var(--blanco);
+}
+
+/* Campo de subida de archivos destacado con color secundario */
+input[type="file"]{
+  padding: .5rem;
+  border: 1px solid var(--gris-300);
+  border-radius: 8px;
+  font-size: .95rem;
+  background: var(--color-secundario);
+  color: #fff;
+}
+
+/* Área de texto ajustable en vertical */
+textarea{ min-height: 140px; resize: vertical; }
+
+/* Dos columnas en pantallas medianas/grandes para filas concretas */
+.form-row{ display: grid; gap: .9rem; }
+@media (min-width: 650px){ .form-row{ grid-template-columns: 1fr 1fr; } }
+
+/* Línea legal: checkbox + texto */
+.legal{ 
+  display: flex; 
+  gap: .6rem; 
+  align-items: center; 
+  font-size: .95rem; 
+}
+/* Enlace AVISO LEGAL sin subrayado y con color controlado */
+.legal a{ 
+  text-decoration: none; 
+  color: black; 
+  font-size: 12px; 
+}
+.legal a:hover{ 
+  text-decoration: none; 
+  color: var(--color-secundario); 
+  font-size: 12px; 
+}
+
+/* Checkbox personalizado (cuadrado con check) */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--gris-300);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+/* Estado marcado: fondo y borde del color secundario */
+input[type="checkbox"]:checked {
+  background-color: var(--color-secundario);
+  border-color: var(--color-secundario);
+}
+/* Dibuja el check en blanco cuando está marcado */
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+}
+
+/* Enfoque de campos: resalta el borde y añade un poco de sombra */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 4px var(--color-secundario);
+}
+
+/* ===================================================== CONTACTO================================================ */
+/* Contenedor del bloque de contacto centrado */
+.contacto-container{ 
+  display: flex; 
+  justify-content: center; 
+}
+/* Sección de contacto con ancho máximo */
+.contacto-container section{
+  text-align: center;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+/* Imagen del mapa con borde y radio */
+.contacto-container img.mapa{
+  display: block;
+  margin: 1rem auto;
+  border: 1px solid var(--gris-300);
+  border-radius: 10px;
+  max-width: 100%;
+}
+/* Parametros generales para imagen de mapa */
+.mapa{ 
+  width: 100%; 
+  max-width: 900px; 
+  border: 1px solid var(--gris-300); 
+  border-radius: 10px; 
+}
+
+
+
+
+/* ========================================================FOOTER=========================================== */
+/* Pie de página con fondo oscuro y texto claro */
+footer {
+  margin-top: 2rem;
+  padding: 1.5rem 1rem;
+  background: #535252;
+  color: var(--gris-100);
+  font-size: 0.9rem;
+  border-top: 2px solid white;
+}
+
+/* Distribución del footer en filas y columnas */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+/* Ajustes de tipografía en el lado izquierdo */
+.footer-left p { margin: 0.3rem 0; }
+
+/* Bloque central: iconos de redes alineados */
+.footer-center { 
+  display: flex; 
+  gap: 1rem; 
+  align-items: center; 
+}
+
+/* Iconos de redes en blanco con pequeña animación */
+.footer-center img {
+  width: 54px; height: 54px;
+  filter: invert(1);              /* Convierte iconos oscuros a claros */
+  transition: transform 0.2s;     /* Efecto de zoom suave */
+}
+.footer-center img:hover { transform: scale(1.2); }
+
+/* Enlaces del lado derecho del footer AVISO LEGAL */
+.footer-right a{ 
+  color: white; 
+  text-decoration: none; 
+}
+.footer-right a:hover{ 
+  color: var(--color-secundario); 
+}

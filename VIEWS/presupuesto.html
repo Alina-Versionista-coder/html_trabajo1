@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sbert Distribution | Envianos tu DEMO</title>
+
+  <!-- DESCRIPCION PARA POSICIONAMENTO EN REDES SOCIALES Y GOOGLE-->
+  <meta name="description" content="Sbert Distribution reúne sellos discográficos especializados en techno, house y música electrónica. Catálogo exclusivo, demos y contacto para artistas.">
+
+  <!-- PALABRAS CLAVES -->
+  <meta name="keywords" content="techno, house, música electrónica, sello discográfico, distribución musical, Sbert Records, DJs, productores">
+
+  <!-- AUTOR -->
+  <meta name="author" content="Sbert Distribution">
+  <link rel="stylesheet" href="../CSS/estilos.css">
+</head>
+
+
+<body>
+  <header>
+     <!-- SECCION QUE CONTIENE LOGO DE LA EMPRESA Y EL NOMBRE-->
+    <div class="container brand">
+      <img src="../IMAGES/sbert_records2.jpg" alt="Sbert_Records">
+      <span>Sbert Records</span>
+    </div>
+  </header>
+
+  <nav>
+
+    <!-- "MENU" SECCION QUE CONTIENE LA LISTA DESORDINADA "MENU" CON 4 ENLACES CADA UNA
+     VINCULADA A SU CORRESPONDIENTE PAGINA-->
+    
+    <div class="container">
+      <ul class="menu">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../VIEWS/portfolio.html">Catálogo</a></li>
+        <li><a class="activo" href="presupuesto.html">Tu Demo</a></li>
+        <li><a href="../VIEWS/contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+                  <!--FORMULARIO DENTRO DE SECCION CON EL TITULO-->
+  <div class="container">
+     <section>
+      <h1>Envíanos tu DEMO</h1>
+      <div class="container presupuesto-container">
+      <!--"POST" PARA ENVIAR DATOS,
+       "ACTION" AUN NO TIENE LINK DONDE ENVIAR-->
+      <form action="#" method="post">
+        <div class="form-row">
+          <div>
+            <!--"LABEL"NOMBRE VISIBLE DEL CAMPO-->
+            <!--FOR="NOMBRE": CONECTA EL LABEL(TEXTO) CON EL INPUT(LA CAJA DE ESCRIBIR) QUE TENGA ESTE ID-->
+            <!--"NAME"="NOMBRE": EL NOMBRE DEL DATO QUE SE MANDA-->
+            <!--TYPE"TEXT": SIGNIFICA QUE PUEDO PONER MI TEXTO-->
+            <!--PLACEHOLDER "TU NOMBRE": ES UN TEXTO DE EJEMPLO, QUE AYUDARA A USUARIO-->
+            <!--REQUIRED: OBLIGACION DE RELLENAR LOS DATOS PARA PODER ENVIAR-->
+            <!--PATTERN: REGLA PARA VALIDAR (9 NUMEROS EN TELÉFONO)-->
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="e-mail@ejemplo.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+           <!--CAMPO PARA TELEFONO-->
+          <div>
+           <!--TYPE "TEL": DATO QUE PIDE ES NUMERO DEL TELEFONO-->
+            <!--PATTERN=[0-9]{9}: PERMITE NUMEROS DE 0 A 9 Y SOLO 9 DIGITOS MAXIMUM-->
+            <!--PLACEHOLDER: EJEMPLO COMO ESCRIBIR EL TELEFONO-->
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" pattern="[0-9]{9}" placeholder="+34 651234567" required>
+          </div>
+          
+          <!--CAMPO PARA SUBIR DATOS-->
+          <div>
+            <!--ID Y NAME IDENTIFICAN EL CAMPO-->
+            <!--TYPE "FILE" CREA UN BOTON QUE PERMITE SUBIR EL ARCHIVO-->
+            <!--PLACEHOLDER: ES UN EJEMPLO QUE AYUDA A USUARIO-->
+            <label for="demo">Sube tu DEMO</label><input type="file" id="demo" name="demo" accept=".mp3,.mp4,.zip,.wave," required>
+          </div>
+        </div>
+
+        <!--CAMPO PARA ESCRIBIR EL MENSAJE-->
+        <div>
+          <!--TEXTAREA: CREA CAJA GRANDE PARA TEXTO LARGO-->
+          <!--PLACEHOLDER: ES UN EJEMPLO QUE AYUDA A USUARIO-->
+          <label for="mensaje">Solicite más información</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Escribe aquí los detalles de tu proyecto" required></textarea>
+        </div>
+
+        <!-- CHECKBOX, TIPO DE CAJA QUE APARECERA PARA ACEPTAR POLITICA Y PRIVACIDAD Y SERA OBLIGADO -->
+         <!--LINK QUE LLEVARA A LA PAGINA SOBRE LA POLITICA Y PRIVACIDAD-->
+        <label class="legal">
+          <input id="privacidad" type="checkbox" required>
+          <a href="../politica.html"><span>Acepto la Política de privacidad</span></a>
+        </label>
+        
+        <!--BOTON "ENVIAR" -->
+        <button class="button" type="submit">Enviar</button>
+      </form>
+      </div>
+    </section>
+  </div>
+
+<!---FOOTER PIE DE PAGINA-->
+  <footer>
+  <div class="container footer-content">
+    <!-- COLUMNA IZQUIERDA QUE CONTIENE NOMBRE DE EMPRESA Y DIRECCION FISICA-->
+    <div class="footer-left">
+      <p>© 2025 Sbert Distribution SSL</p>
+      <p>Todos los derechos reservados</p>
+      <p>Dirección: Carretera Militar 50, Illes Balears, Spain, 07012</p>
+    </div>
+
+    <!-- COLUMNA CENTRAL QUE CONTIENE RRSS CADA RED VINCULADA CON SU DIRECCION-->
+    <div class="footer-center">
+      <a href="https://www.facebook.com/p/Sbert-Records-100063693550907/" class="social">
+        <img src="../IMAGES/logos y RRSS/logos/fbook.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/sbert_records/" class="social">
+        <img src="../IMAGES/logos y RRSS/logos/insta2.png" alt="Instagram">
+      </a>
+       <a href="https://www.youtube.com/channel/UC2CBPfKLiIV60zYjvActzmg" class="social">
+        <img src="../IMAGES/logos y RRSS/logos/10462337.png" alt="Youtube">
+      </a>
+      <a href="https://x.com/danisbert" class="social">
+        <img src="../IMAGES/logos y RRSS/logos/10483410.png" alt="Twitter">
+      </a>
+    </div>
+
+    <!-- COLUMNA DERECHA QUE CONTIENE LINK AVISO LEGAL VINCULADO CON LA PAGINA "AVISO LEGAL"-->
+    <div class="footer-right">
+      <a href="../avisoLegal.html">Aviso legal</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
