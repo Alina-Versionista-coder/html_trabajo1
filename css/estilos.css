@@ -109,7 +109,11 @@ section{
   padding: 1.2rem;
   margin: 1rem 0 3rem;
 }
-
+section h2{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 /* ============================ INDEX ================================
 ============================PORTADA (HERO)============================*/
 /* Bloque de bienvenida con fondo color crema */
